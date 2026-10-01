@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary!</title>
+    <style>
+        /* Mengatur tampilan halaman utama */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffeef8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Desain Tombol Utama */
+        .btn-buka {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff4d79;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 77, 121, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-buka:hover {
+            background-color: #ff1a53;
+            transform: scale(1.05);
+        }
+
+        /* Desain Latar Belakang Pop-up (Modal) */
+        .modal-overlay {
+            display: none; /* Tersembunyi secara default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Desain Kotak Ucapan */
+        .kotak-ucapan {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 80%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: muncul 0.4s ease;
+        }
+
+        /* Animasi agar kotak ucapan muncul perlahan */
+        @keyframes muncul {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .kotak-ucapan h2 {
+            color: #ff4d79;
+            margin-top: 0;
+        }
+
+        .kotak-ucapan p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Tombol Tutup */
+        .btn-tutup {
+            margin-top: 20px;
+            padding: 8px 20px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .btn-tutup:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tombol Utama untuk Diklik -->
+    <button class="btn-buka" onclick="bukaUcapan()">Klik di Sini Yaa...❤️</button>
+
+    <!-- Struktur Pop-up Ucapan -->
+    <div class="modal-overlay" id="overlayUcapan">
+        <div class="kotak-ucapan">
+            <h2>Happy Anniversary Ummi Sayang 🎉</h2>
+            <p>Terima kasih sudah selalu sabar, tangguh, dan tidak pernah menyerah... </p>
+			<p>Ummi sama anak-anak adalah sumber energi  yang ngak ada habisnya buat abi untuk terus berjuang...
+			<p>Semoga setiap peluh dan lelah kita menjadi keberkahan, Terima kasih sudah menjadi pasangan terbaik buat Abi dan ummi yang baik buat anak-anak...</p>
+            <div class="signature">
+            ❤️Peluk Cium dari Abi ❤️
+		<p>	
+        <button class="btn-tutup" onclick="tutupUcapan()">Tutup</button>
+		</p>
+		</div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menampilkan pop-up ucapan
+        function bukaUcapan() {
+            document.getElementById("overlayUcapan").style.display = "flex";
+        }
+
+        // Fungsi untuk menutup pop-up ucapan
+        function tutupUcapan() {
+            document.getElementById("overlayUcapan").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
